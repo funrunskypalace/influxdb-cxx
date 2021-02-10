@@ -38,7 +38,7 @@ std::unique_ptr<Transport> withUnixSocketTransport(const http::url& /*uri*/) {
 #endif
 
 std::unique_ptr<Transport> withHttpTransport(const http::url& uri) {
-  auto transport = std::make_unique<transports::HTTP>(uri.url);
+  auto transport = std::make_unique<transports::HTTP>(uri.real_url);
   if (!uri.user.empty()) {
     transport->enableBasicAuth(uri.user + ":" + uri.password);
   }

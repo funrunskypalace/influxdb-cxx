@@ -25,7 +25,9 @@ project(influxdb-cxx
 #add_subdirectory(doc)
 
 # Add compiler flags for warnings and debug symbols
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -pedantic -Wextra")
+if(UNIX)
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -pedantic -Wextra")
+endif()
 
 # Set fPIC for all targets
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
@@ -46,6 +48,16 @@ endif()
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O0 --coverage")
 endif()
+
+# add dependencies
+set(Boost_INCLUDE_DIR d:/dev/vcpkg/installed/x64-windows/include)
+if(UNIX)
+else()
+  add_definitions(-DBOOST_ASIO_DISABLE_LOCAL_SOCKETS)
+  set(CURL_LIBRARY d:/dev/vcpkg/installed/x64-windows/lib/libcurl.lib)
+endif()
+set(CURL_INCLUDE_DIR d:/dev/vcpkg/installed/x64-windows/include)
+set(CMAKE_CXX_STANDARD 17)
 
 # Fixes warning when using boost from brew
 set(Boost_USE_MULTITHREADED TRUE)
