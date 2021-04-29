@@ -1,4 +1,0 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(1947,5): warning : The referenced project 'D:\EIconfig\code\EIConfigTool\3rdparty\influxdb-cxx\src\cmake_build\ZERO_CHECK.vcxproj' does not exist.
-  Building Custom Rule D:/EIconfig/code/EIConfigTool/3rdparty/influxdb-cxx/src/influxdb-cxx/CMakeLists.txt
-  系统找不到指定的路径。
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(240,5): error MSB8066: “D:\EIconfig\code\EIConfigTool\3rdparty\influxdb-cxx\src\influxdb-cxx\CMakeLists.txt”的自定义生成已退出，代码为 3。
